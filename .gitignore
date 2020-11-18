@@ -1,3 +1,6 @@
 sites.json
 venv
 .idea/
+.env
+*pyc
+__pycache__
