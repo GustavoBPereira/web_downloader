@@ -1,6 +1,7 @@
 import sys
 import os
 from scrapy.crawler import CrawlerProcess
+from scrapy.utils.project import get_project_settings
 
 from site_downloader.spiders.sites import SiteSpider
 
@@ -9,7 +10,8 @@ if __name__ == '__main__':
         os.remove('sites.json')
     except FileNotFoundError:
         pass
-    process = CrawlerProcess({
+
+    process = CrawlerProcess(get_project_settings(), {
         'FEEDS': {
             'sites.json': {'format': 'json'},
         },

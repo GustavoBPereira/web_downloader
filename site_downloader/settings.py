@@ -13,6 +13,8 @@ SPIDER_MODULES = ['site_downloader.spiders']
 NEWSPIDER_MODULE = 'site_downloader.spiders'
 
 
+LOG_LEVEL = 'ERROR'
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'site_downloader (+http://www.yourdomain.com)'
 
