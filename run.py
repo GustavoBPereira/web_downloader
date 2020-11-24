@@ -11,11 +11,7 @@ if __name__ == '__main__':
     except FileNotFoundError:
         pass
 
-    process = CrawlerProcess(get_project_settings(), {
-        'FEEDS': {
-            'sites.json': {'format': 'json'},
-        },
-    })
+    process = CrawlerProcess(get_project_settings())
 
     process.crawl(SiteSpider)
     process.start()

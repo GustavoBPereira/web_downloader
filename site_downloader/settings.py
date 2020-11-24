@@ -12,6 +12,9 @@ BOT_NAME = 'site_downloader'
 SPIDER_MODULES = ['site_downloader.spiders']
 NEWSPIDER_MODULE = 'site_downloader.spiders'
 
+FEEDS = {
+    'sites.json': {'format': 'json'},
+}
 
 LOG_LEVEL = 'ERROR'
 
