@@ -9,4 +9,3 @@ def create_structure(response):
         os.makedirs(f'{local_dir}/../../{folder}')
     except FileExistsError:
         pass
-g
