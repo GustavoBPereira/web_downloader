@@ -5,7 +5,8 @@ from site_downloader.downloader.site_structure import create_structure
 
 def download_page(response):
     create_structure(response)
-    file_name = response.url.split('/')[-1] + '.html'
+    file_name = response.url.split('/')[-1]
+    file_name += '.html' if not file_name.endswith('.html') else ''
     file_name = 'index.html' if file_name == '.html' else file_name
 
     file_path = os.path.dirname(os.path.abspath(__file__)) + '/../../pythonscraping.com/' + file_name
