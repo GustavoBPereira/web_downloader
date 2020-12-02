@@ -15,4 +15,16 @@ def fix_links(response):
                 file = 'index' if link['href'] == '/' else link['href']
                 file = file[1::] if file.startswith('/') else file
                 link['href'] = root_path + file + '.html'
+
+    for img in bs.find_all('img'):
+        if 'src' in img.attrs:
+            root_path = ''
+            for i in response.url.split('/')[3:-1]:
+                root_path += '../'
+            root_path = './' if root_path == '' else root_path
+            file_path = 'static_files/img/' + ''.join([str(img_path) + '/' for img_path in response.url.split('/')[3:-1]])
+            file = img['src'].split('/')[-1]
+            img['src'] = root_path + file_path + file
+            print(root_path + file_path + file)
+
     return str(bs)
