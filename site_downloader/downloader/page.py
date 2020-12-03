@@ -8,10 +8,9 @@ from site_downloader.downloader.utils import get_file_location
 
 def download_page(response):
     create_structure(response)
-    file_path = get_file_location(response)
     download_statics(response)
 
-    file_path = os.path.dirname(os.path.abspath(__file__)) + '/../../' + file_path
+    file_path = os.path.dirname(os.path.abspath(__file__)) + '/../../' + get_file_location(response)
     with open(file_path, 'w+') as f:
         html = fix_links(response)
         f.write(html)
