@@ -25,6 +25,5 @@ def fix_links(response):
             file_path = 'static_files/img/' + ''.join([str(img_path) + '/' for img_path in response.url.split('/')[3:-1]])
             file = img['src'].split('/')[-1]
             img['src'] = root_path + file_path + file
-            print(root_path + file_path + file)
 
     return str(bs)
