@@ -16,6 +16,13 @@ FEEDS = {
     'sites.json': {'format': 'json'},
 }
 
+ITEM_PIPELINES = {'site_downloader.pipelines.FilesPipelineInternal': 1,
+                  'site_downloader.pipelines.ImagePipeLineInternal': 1}
+
+FILES_STORE = r'/home/gustavo/projects/site_downloader/downloded_page'
+IMAGES_STORE = r'/home/gustavo/projects/site_downloader/downloded_page'
+
+
 LOG_LEVEL = 'ERROR'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
