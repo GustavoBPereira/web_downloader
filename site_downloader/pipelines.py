@@ -6,8 +6,18 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
+from scrapy.pipelines.files import FilesPipeline
+from scrapy.pipelines.images import ImagesPipeline
 
 
 class SiteDownloaderPipeline:
     def process_item(self, item, spider):
         return item
+
+
+class ImagePipeLineInternal(ImagesPipeline):
+    pass
+
+
+class FilesPipelineInternal(FilesPipeline):
+    pass

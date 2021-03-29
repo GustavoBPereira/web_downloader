@@ -16,3 +16,7 @@ def static_path(response, static_type):
     root_path = os.path.dirname(os.path.abspath(__file__)) + '/../../' + splited_url[2]
     path = ''.join(f + '/' for f in splited_url[3:-1])
     return f'{root_path}/static_files/{static_type}/{path}'
+
+
+def is_internal_link(scrapy_response, link):
+    return True
