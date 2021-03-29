@@ -14,7 +14,7 @@ setup(
     download_url='https://github.com/GustavoBPereira/web_downloader/',
     packages=find_packages(),
     include_package_data=True,
-    install_requires=['Scrapy==2.4.1', 'beautifulsoup4==4.9.3'],
+    install_requires=['Scrapy==2.4.1', 'beautifulsoup4>=4.6'],
     classifiers=[
         'Environment :: Web Environment',
         'Programming Language :: Python',
